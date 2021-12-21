@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+    <info>
+        <id></id>
+        <name></name>
+        <antecedent></antecedent>        
+        <behavior></behavior>
+        <consequence></consequence>        
+        <nativeWidth>1024</nativeWidth>
+        <nativeHeight>768</nativeHeight>
+        <category> </category>
+    </info>
+    <resources>          
+    </resources>
+    <code> 
+        <instruction>
+            <type>Prompt</type>
+            <position>0</position>
+            <next>1</next>
+            <description>Estímulos</description>
+            <editable>true</editable>
+            <data>
+                <showTime>5</showTime>
+            </data>
+        </instruction>  
+    </code>
+</activity>

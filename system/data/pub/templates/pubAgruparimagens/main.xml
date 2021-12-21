@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+    <info>
+        <id></id>
+        <name></name>
+        <antecedent></antecedent>        
+        <behavior></behavior>
+        <consequence></consequence>        
+        <nativeWidth>1024</nativeWidth>
+        <nativeHeight>768</nativeHeight>
+        <category> </category>
+    </info>
+    <resources>          
+    </resources>
+    <code>            
+      <instruction>
+            <type>PositionImages</type>
+            <next>-1</next>
+            <position>0</position>
+            <editable>true</editable>
+            <description>Estímulos</description>
+            <data>
+                <finishButton>1570017005838</finishButton>
+                <image>
+                    <imageID>_finishButton</imageID>
+                    <isClickable>true</isClickable>
+                    <isDraggable>false</isDraggable>
+                    <imageWidth>64</imageWidth>
+                    <imageHeight>64</imageHeight>
+                    <imageX>666</imageX>
+                    <imageY>470</imageY>
+                    <localID>1570017005838</localID>
+                </image>
+                
+            </data>
+        </instruction>   
+    </code>
+</activity>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<activity>
+
+    <info>
+
+        <id></id>
+
+        <name></name>
+
+        <antecedent></antecedent>        
+
+        <behavior></behavior>
+
+        <consequence></consequence>        
+
+        <nativeWidth>1024</nativeWidth>
+
+        <nativeHeight>768</nativeHeight>
+
+        <category> </category>
+
+    </info>
+
+    <resources>          
+
+    </resources>
+
+    <code>            
+
+
+        <instruction>
+
+            <type>SelectStimuli</type>
+
+            <next>1</next>
+
+            <position>0</position>
+
+            <editable>true</editable>
+
+            <description>Apresenta estímulos e permite ao estudante selecionar um para ser utilizado em uma tela posterior</description>
+
+            <data> 
+                <onCorrect>1</onCorrect>
+
+                <onWrong>1</onWrong>
+
+            </data>
+
+        </instruction> 
+        
+        <instruction>
+
+            <type>RaceGame</type>
+
+            <next>-1</next>
+
+            <position>1</position>
+
+            <editable>true</editable>
+
+            <description>Jogo da Corrida</description>
+
+            <data> 
+                <onCorrect>-1</onCorrect>
+
+                <onWrong>-1</onWrong>
+                 <camCapture>
+
+                    <isClickable>true</isClickable>
+
+                    <isDraggable>false</isDraggable>
+
+                    <localID>_camInput</localID>
+
+                    <posX>300</posX>
+
+                    <posY>40</posY>
+
+                    <sizeX>100</sizeX>
+
+                    <sizeY>100</sizeY>
+
+                </camCapture>
+
+                <image>
+
+                    <imageID>_playerStartPosition</imageID>
+
+                    <isClickable>false</isClickable>
+
+                    <isDraggable>false</isDraggable>
+
+                    <imageWidth>100</imageWidth>
+
+                    <imageHeight>100</imageHeight>
+
+                    <imageX>54</imageX>
+
+                    <localID>_playerStartPosition</localID>
+
+                    <imageY>198</imageY>
+
+                    <containerID>null</containerID>
+
+                    <dragAndAssociate>false</dragAndAssociate>
+                </image>
+
+                <image>
+
+                    <imageID>_playerEndPosition</imageID>
+
+                    <isClickable>false</isClickable>
+
+                    <isDraggable>false</isDraggable>
+
+                    <imageWidth>100</imageWidth>
+
+                    <imageHeight>100</imageHeight>
+
+                    <imageX>354</imageX>
+
+                    <localID>_playerEndPosition</localID>
+
+                    <imageY>198</imageY>
+
+                    <containerID>null</containerID>
+
+                    <dragAndAssociate>false</dragAndAssociate>
+                </image>
+
+
+                <image>
+
+                    <imageID>_emotionPosition</imageID>
+
+                    <isClickable>false</isClickable>
+
+                    <isDraggable>false</isDraggable>
+
+                    <imageWidth>100</imageWidth>
+
+                    <imageHeight>100</imageHeight>
+
+                    <imageX>554</imageX>
+
+                    <localID>_emotionPosition</localID>
+
+                    <imageY>198</imageY>
+
+                    <containerID>null</containerID>
+
+                    <dragAndAssociate>false</dragAndAssociate>
+                </image>
+
+            </data>
+
+        </instruction> 
+
+    </code>
+
+</activity>

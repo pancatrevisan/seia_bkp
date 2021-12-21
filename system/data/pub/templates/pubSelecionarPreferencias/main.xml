@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+    <info>
+        <id></id>
+        <name></name>
+        <antecedent></antecedent>        
+        <behavior></behavior>
+        <consequence></consequence>        
+        <nativeWidth>1024</nativeWidth>
+        <nativeHeight>768</nativeHeight>
+        <category> </category>
+    </info>
+    <resources>          
+    </resources>
+    <code>            
+         <instruction>
+            <type>PreferenceSelect</type>
+            <position>0</position>
+            <next>1</next>
+            <description>Seleciona Reforços de preferência</description>
+            <editable>true</editable>
+            <data>
+                
+            </data>
+        </instruction>
+
+    </code>
+</activity>

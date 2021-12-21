@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><activity> 
+    <info>
+        <id></id>
+        <name></name>
+        <antecedent></antecedent>
+        <behavior></behavior>
+        <consequence></consequence>
+        <nativeWidth>1024</nativeWidth>
+        <nativeHeight>768</nativeHeight>
+        <category> </category>
+    </info>
+    <resources>
+        <image>mu101019020323</image>
+    </resources>
+    <code>
+       
+        
+        <instruction>
+            <type>Feedback</type>
+            <position>0</position>
+            <next>-1</next>
+            <description>Avaliação</description>
+            <editable>false</editable>
+            <data>
+                <correctButton>1570017005838</correctButton>
+                <correctWithTip>1570017005839</correctWithTip>
+                <wrongButton>1570017005840</wrongButton>
+                <image>
+                    <imageID>_correctButton</imageID>
+                    <isClickable>true</isClickable>
+                    <isDraggable>false</isDraggable>
+                    <imageWidth>167</imageWidth>
+                    <imageHeight>162</imageHeight>
+                    <imageX>537</imageX>
+                    <imageY>190</imageY>
+                    <localID>1570017005838</localID>
+                    <containerID>null</containerID>
+                    <dragAndAssociate>false</dragAndAssociate>
+                </image>
+                <image>
+                    <imageID>_correctWithTipButton</imageID>
+                    <isClickable>true</isClickable>
+                    <isDraggable>false</isDraggable>
+                    <imageWidth>168</imageWidth>
+                    <imageHeight>155</imageHeight>
+                    <imageX>290</imageX>
+                    <imageY>200</imageY>
+                    <localID>1570017005839</localID>
+                    <containerID>null</containerID>
+                    <dragAndAssociate>false</dragAndAssociate>
+                </image>
+                <image>
+                    <imageID>_wrongButton</imageID>
+                    <isClickable>true</isClickable>
+                    <isDraggable>false</isDraggable>
+                    <imageWidth>159</imageWidth>
+                    <imageHeight>148</imageHeight>
+                    <imageX>54</imageX>
+                    <imageY>198</imageY>
+                    <localID>1570017005840</localID>
+                    <containerID>null</containerID>
+                    <dragAndAssociate>false</dragAndAssociate>
+                </image>
+            </data>
+        </instruction>
+    </code>
+</activity>
