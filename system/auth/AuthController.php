@@ -17,7 +17,7 @@ if(!defined('ROOTPATH')){
 if(!defined('ROOTPATH')){
     require '../root.php';
 }
-require ROOTPATH . '/core/Controller.php';
+require_once ROOTPATH . '/core/Controller.php';
 require_once ROOTPATH . '/professional/ProfessionalController.php';
 require_once ROOTPATH . '/utils/DBAccess.php';
 $sel_lang = 'ptb';
@@ -376,18 +376,34 @@ class AuthController extends Controller
 
     public function newUser($param=[]){
         $data = [];
-        if(!isset($_POST['signup_username']))
+        if(isset($param['first_admin'])){
+            $username   = $_POST['signup_username'];
+            $name       = "SEIA Admin";
+            $email      = $_POST['signup_email'];
+            $pass       = $_POST['signup_pass'];
+            $pass = password_hash($pass,PASSWORD_BCRYPT );
+            $city       = "online";
+            $comment    = "admin";
+            $role       = 'professional';
+            $athena     = TRUE;
+
+        }
+        else if(isset($_POST['signup_username']))
         {
+            
+            $username   = $_POST['signup_username'];
+            $name       = $_POST['signup_name'];
+            $email      = $_POST['signup_email'];
+            $pass       = $_POST['signup_pass'];
+            $pass = password_hash($pass,PASSWORD_BCRYPT );
+            $city       = $_POST['signup_city'];
+            $comment    = $_POST['signup_comment'];
+            $role       = 'professional';  
+            $athena     = FALSE; 
+        }
+        else{
             header('location:index.php?action=newUserForm');
         }
-        $username   = $_POST['signup_username'];
-        $name       = $_POST['signup_name'];
-        $email      = $_POST['signup_email'];
-        $pass       = $_POST['signup_pass'];
-        $pass = password_hash($pass,PASSWORD_BCRYPT );
-        $city       = $_POST['signup_city'];
-        $comment    = $_POST['signup_comment'];
-        $role       = 'professional';
 
         //checks if user exists
         $db = new DBAccess();
@@ -413,8 +429,8 @@ class AuthController extends Controller
 
 
 
-        $SQL = "INSERT INTO user(username, name, email, pass, city, comment,role, active) " .
-                "VALUES ('$username', '$name','$email','$pass','$city','$comment','$role', FALSE)";
+        $SQL = "INSERT INTO user(username, name, email, pass, city, comment,role, active,athena) " .
+                "VALUES ('$username', '$name','$email','$pass','$city','$comment','$role', FALSE,'$athena')";
         
         
         if($db->query($SQL)){

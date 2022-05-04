@@ -7,6 +7,12 @@ if(!isset($_SESSION))
 if(!defined('ROOTPATH')){
     require './root.php';
 }
+if(file_exists('./install')){
+    echo "Instalar?";
+    $url = BASE_URL . "/install";   
+    header("location:$url");    
+    die(0);
+}
 if(!isset($_SESSION['username'])){
     $url = BASE_URL . "/auth";   
     header("location:$url"); 
