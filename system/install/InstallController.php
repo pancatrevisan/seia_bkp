@@ -53,16 +53,20 @@ class InstallController extends Controller {
             echo "sem erro? ";
             print_r($con);
         }
+        $con->close();
 
         $location = "./db_class_template";
         $template = file_get_contents($location);  
-
+        echo "<br><BR> <h2> " . ROOTPATH . "</h2>";
         //alterar o script de criação do objeto do DB.
         $template = str_replace("XXHOSTXX", $db_host,$template);
         $template = str_replace("XXUSERXX", $db_usr,$template);
         $template = str_replace("XXPASSXX", $db_pass,$template);
         $template = str_replace("XXDBXX", 'seiadatabase',$template);
 
+        $out_file_name = ROOTPATH . "/test.php";
+        //$out_file = fopen($out_file_name,'x');
+        file_put_contents($out_file_name , $template);
         echo "<br> <br>" .$template;
         $params = ["first_admin"=> TRUE, 
         "signup_username" => $db_usr,
