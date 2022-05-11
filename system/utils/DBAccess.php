@@ -4,7 +4,7 @@
         private  $DB_HOST = "localhost";
         private $DB_USER = "root";
         private $DB_PASS = "";
-        private $DB   = "swaba";
+        private $DB   = "seiadatabase";
         
         public $con;
 

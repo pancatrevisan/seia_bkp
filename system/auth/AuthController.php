@@ -334,19 +334,19 @@ class AuthController extends Controller
             $username   =strtolower( $data['signup_username']);
             $professionalDir = ROOTPATH . "/data/user/$username";
             if(!mkdir($professionalDir)){
-                die('Error creating directory');
+                die('Error creating directory ' . $professionalDir);
             }
             
             //stimuli dir
             $professionalDir = ROOTPATH . "/data/user/$username/stimuli";
             if(!mkdir($professionalDir)){
-                die('Error creating directory');
+                die('Error creating directory  ' . $professionalDir);
             }
             
             //activity dir
             $professionalDir = ROOTPATH . "/data/user/$username/activity";
             if(!mkdir($professionalDir)){
-                die('Error creating directory');
+                die('Error creating directory ' . $professionalDir);
             }
             
             $src = ROOTPATH . "/data/pub/avatars/professional.png";
@@ -377,10 +377,10 @@ class AuthController extends Controller
     public function newUser($param=[]){
         $data = [];
         if(isset($param['first_admin'])){
-            $username   = $_POST['signup_username'];
+            $username   = $param['signup_username'];
             $name       = "SEIA Admin";
-            $email      = $_POST['signup_email'];
-            $pass       = $_POST['signup_pass'];
+            $email      = $param['signup_email'];
+            $pass       = $param['signup_pass'];
             $pass = password_hash($pass,PASSWORD_BCRYPT );
             $city       = "online";
             $comment    = "admin";
@@ -434,22 +434,22 @@ class AuthController extends Controller
         
         
         if($db->query($SQL)){
-            $username   =strtolower( $_POST['signup_username']);
+            $username   =strtolower( $username );//['signup_username']);
             $professionalDir = ROOTPATH . "/data/user/$username";
             if(!mkdir($professionalDir)){
-                die('Error creating directory');
+                die('Error creating directory  ' . $professionalDir);
             }
             
             //stimuli dir
             $professionalDir = ROOTPATH . "/data/user/$username/stimuli";
             if(!mkdir($professionalDir)){
-                die('Error creating directory');
+                die('Error creating directory ' . $professionalDir);
             }
             
             //activity dir
             $professionalDir = ROOTPATH . "/data/user/$username/activity";
             if(!mkdir($professionalDir)){
-                die('Error creating directory');
+                die('Error creating directory ' . $professionalDir);
             }
             
             $src = ROOTPATH . "/data/pub/avatars/professional.png";
@@ -460,10 +460,14 @@ class AuthController extends Controller
             $data = ['studentName'=>'Estudante Exemplo', 'birthday'=>'2012-02-02','city'=>'Endereço','state'=>'MS','sex'=>'male',
             'medication'=>'Nenhum','username'=>$username];
             $pc->newStudentFromData($data);
-            $this->loadView('views/new_user_success.php',$data);
+            if (isset($_POST['signup_username'])){
+                $this->loadView('views/new_user_success.php',$data);
+            }
         }
         else{
-            $this->loadView('views/new_user_fail.php',$data);
+            if(isset($_POST['signup_username'])) {
+                $this->loadView('views/new_user_fail.php',$data);
+            }
             
         }
         
